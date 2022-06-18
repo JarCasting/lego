@@ -1,0 +1,22 @@
+Name = "EdgeCenter"
+Description = ''''''
+URL = "https://edgecenter.ru/dns/"
+Code = "edgecenter"
+Since = "v4.5.0"
+
+Example = '''
+EDGECENTER_PERMANENT_API_TOKEN=xxxxx \
+lego --email you@example.com --dns edgecenter --domains my.example.org run
+'''
+
+[Configuration]
+  [Configuration.Credentials]
+    EDGECENTER_PERMANENT_API_TOKEN = "Permanent API token (https://edgecenter.ru/blog/permanent-api-token-explained/)"
+  [Configuration.Additional]
+    EDGECENTER_POLLING_INTERVAL = "Time between DNS propagation check"
+    EDGECENTER_PROPAGATION_TIMEOUT = "Maximum waiting time for DNS propagation"
+    EDGECENTER_TTL = "The TTL of the TXT record used for the DNS challenge"
+    EDGECENTER_HTTP_TIMEOUT = "API request timeout"
+
+[Links]
+  API = "https://apidocs.edgecenter.ru/dns"
